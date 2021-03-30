@@ -25,7 +25,7 @@ Feature: Menu Management
     #Steps
 
     #precondition
-    Given I have a menu item with name "Cucumber Sandwich" and price 20
+    Given I have a menu item with name 'Cucumber Sandwich' and price $20
     #action
     When I add that menu item
     #result
