@@ -7,11 +7,15 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = {"src/test/java/learning/cucumbercourse/features/MenuManagement.feature"},
-        glue = {"learning.cucumbercourse.stepdefinitions", "learning.cucumbercourse.hooks"},
-     //   tags = "@SmokeTest or (@NightlyBuildTest and @RegularTest)",  // "not @NightlyBuildTest"
-        plugin = {"pretty"}
-
-        //run maven test with tags: mvn test -Dcucumber.filter.tags="@SmokeTest or @NightlyBuildTest"
+        glue = {"learning.cucumbercourse.stepdefinitions"},
+        //tags = "@SmokeTest or (@NightlyBuildTest and @RegularTest)",  // "not @NightlyBuildTest"
+        plugin = {"pretty",
+                "html:target/SystemTestReports/html",
+                "json:target/SystemTestReports/json/report.json",
+                "junit:target/SystemTestReports/junit/report.xml"}
 )
+
+//run maven test with tags: mvn test -Dcucumber.filter.tags="@SmokeTest or @NightlyBuildTest"
+
 public class MenuManagementTest {
 }
