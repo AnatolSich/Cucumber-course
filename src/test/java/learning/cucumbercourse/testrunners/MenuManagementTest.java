@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = {"src/test/java/learning/cucumbercourse/features/MenuManagement.feature"},
-        glue = {"learning.cucumbercourse.stepdefinitions"},
+        glue = {"learning.cucumbercourse.stepdefinitions", "learning.cucumbercourse.hooks"},
      //   tags = "@SmokeTest or (@NightlyBuildTest and @RegularTest)",  // "not @NightlyBuildTest"
         plugin = {"pretty"}
 
