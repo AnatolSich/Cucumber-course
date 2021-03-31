@@ -12,7 +12,9 @@ import org.junit.runner.RunWith;
         plugin = {"pretty",
                 "html:target/SystemTestReports/html",
                 "json:target/SystemTestReports/json/report.json",
-                "junit:target/SystemTestReports/junit/report.xml"}
+                "junit:target/SystemTestReports/junit/report.xml"},
+        dryRun = false,
+        monochrome = true
 )
 
 //run maven test with tags: mvn test -Dcucumber.filter.tags="@SmokeTest or @NightlyBuildTest"
