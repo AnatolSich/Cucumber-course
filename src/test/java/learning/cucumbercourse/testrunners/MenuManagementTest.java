@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
        //         "json:target/SystemTestReports/json/report.json",
        //         "junit:target/SystemTestReports/junit/report.xml"
         },
-        tags = "@ListOfStrings",
+        tags = "@ListOfListOfStrings",
         dryRun = false,
         monochrome = false
 )
