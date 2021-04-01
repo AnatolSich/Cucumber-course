@@ -6,6 +6,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Stream;
 
 public class DataTableSteps {
    /* @Given("I placed an order for the following items")
@@ -33,7 +35,7 @@ public class DataTableSteps {
         }
     }*/
 
-    @Given("I placed an order for the following items")
+  /*  @Given("I placed an order for the following items")
     public void i_placed_an_order_for_the_following_items(io.cucumber.datatable.DataTable dataTable) {
 
         List<List<String>> billData = dataTable.asLists();
@@ -44,6 +46,27 @@ public class DataTableSteps {
                 System.out.print(billItem + " | ");
             }
             System.out.println();
+        }
+    }*/
+
+    @Given("I placed an order for the following items")
+    public void i_placed_an_order_for_the_following_items(io.cucumber.datatable.DataTable dataTable) {
+
+        List<Map<String, String>> billData = dataTable.asMaps(String.class, String.class);
+
+        for (Map<String, String> billRow : billData) {
+            String itemName = billRow.get("ItemName");
+            String units = billRow.get("Units");
+            String unitPrice = billRow.get("UnitPrice");
+            //we would skip the first row since Cucumber does not differentiate between headings and row data
+            if (itemName != null) {
+                System.out.println("Key: itemName | Value: " + itemName);
+                System.out.println("Key: units | Value: " + units);
+                System.out.println("Key: unitPrice | Value: " + unitPrice);
+                System.out.println();
+            }
+
+
         }
     }
 
